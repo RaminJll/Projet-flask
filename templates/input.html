@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Predict Insurance Bill</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <main class="container-fluid">
+        <div class="bg-light p-5 rounded form-group col-md-7 col-lg-8">
+            <h1>Prédiction de coût annuel d'assurance</h1>
+            <form action="{{url_for('predict')}}" method="POST">
+                <label for="annee" class="form-label">Année : </label>
+                <input class="form-control" type="text" name="annee" placeholder="annee" required="required" /><br>
+                <label for="taille" class="form-label">Taille du moteur : </label>
+                <input class="form-control" type="text" name="taille" placeholder="taille" required="required" /><br>
+                <label for="cylindres" class="form-label">Nombre de cylindres : </label>
+                <input class="form-control" type="text" name="cylindres" placeholder="cylindres" required="required" /><br>
+                <label for="consommation" class="form-label">Consommation au 100km : </label>
+                <input class="form-control" type="text" name="consommation" placeholder="consommation" required="required" /><br>
+                <br>
+
+                <button type="submit" class="btn btn-primary btn-block btn-large">Prédiction</button>
+            </form>
+
+            <br>
+            <b>{{resultat}}</b>
+            <br>
+        </div>
+    </main>
+
+</body>
+</html>
