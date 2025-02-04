@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification d'Images</title>
+</head>
+<body>
+    <h1>Uploader une Image</h1>
+    
+    <form action="{{ url_for('predictImage') }}" method="POST" enctype="multipart/form-data">
+        <input type="file" name="photo" required>
+        <button type="submit">Envoyer</button>
+    </form>
+</body>
+</html>

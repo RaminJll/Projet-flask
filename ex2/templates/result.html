@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultat</title>
+</head>
+<body>
+    <h1>Résultat de la classification</h1>
+    <img src="{{ url_for('static', filename='img/' + filename) }}" alt="Image Uploadée" width="300">
+    
+    <h2>Top 3 Prédictions :</h2>
+    <ul>
+        {% for id, label, score in predictions %}
+            <li>{{ label }} ({{ "%.2f"|format(score * 100) }}%)</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">Retour</a>
+</body>
+</html>
